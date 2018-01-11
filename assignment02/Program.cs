@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace assignment02
 {
     class Program
     {
@@ -14,13 +14,17 @@ namespace ConsoleApp2
             int number = int.Parse(Console.ReadLine());
             switch (number)
             {
-                case 1: Console.WriteLine("Number is one");
+                case 1:
+                    Console.WriteLine("Number is one");
                     break;
-                case 2: Console.WriteLine("Number is two");
+                case 2:
+                    Console.WriteLine("Number is two");
                     break;
-                case 3: Console.WriteLine("Number is three");
+                case 3:
+                    Console.WriteLine("Number is three");
                     break;
-                default: Console.WriteLine("Joku muu luku");
+                default:
+                    Console.WriteLine("Joku muu luku");
                     break;
             }
             Console.ReadKey();
