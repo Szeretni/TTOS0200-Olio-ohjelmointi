@@ -1,5 +1,6 @@
 ﻿/*Hannu Oksman
-Tee ohjelma, joka kysyy käyttäjältä 5 kokonaislukua. Luvut tulee sijoittaa taulukkoon. Ohjelman tulee tulostaa annetut luvut käänteisessä järjestyksessä.
+Tee ohjelma, joka kysyy käyttäjältä 5 kokonaislukua. Luvut tulee sijoittaa taulukkoon. Ohjelman tulee tulostaa annetut luvut käänteisessä 
+järjestyksessä.
 
 Esimerkkitoiminta:
 
@@ -22,7 +23,36 @@ namespace L02_assignment02
     {
         static void Main(string[] args)
         {
-
+            int arraySize = 5;
+            int[] intArray = new int[arraySize];
+            for (int i = 0; i < arraySize; i++)
+            {
+                Console.Write("Give a number: ");
+                intArray[i] = System.Convert.ToInt32(Console.ReadLine());
+            }
+            for (int i = 0; i < arraySize; i++)
+            {
+                for (int j = 0; j < arraySize-1; j++)
+                {
+                    int temp = intArray[j];
+                    if (intArray[j] < intArray[j+1])
+                    {
+                        intArray[j] = intArray[j + 1];
+                        intArray[j + 1] = temp;
+                    }
+                }
+            }
+            for (int i = 0; i < arraySize; i++)
+            {
+                if (i == arraySize-1)
+                {
+                    Console.WriteLine(intArray[i]);
+                }
+                else
+                {
+                    Console.Write(intArray[i] + ",");
+                }
+            }
         }
     }
 }
