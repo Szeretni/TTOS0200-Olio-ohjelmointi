@@ -30,8 +30,9 @@ namespace assignment03
                 Console.Write("Give points: ");
                 pointarray[i] = System.Convert.ToInt32(Console.ReadLine());
             }
-            for (i = 0; i < nbrRatings; i++)
+            for (int i = 0; i < nbrRatings; i++)
             {
+                //nbrRatings-1 in order to avoid overflow
                 for (int j = 0; j < (nbrRatings-1); j++)
                 {
                     if (pointarray[j]<pointarray[j+1])
@@ -43,7 +44,8 @@ namespace assignment03
                 }
             }
             int result = 0;
-            for (i = 1; i < (nbrRatings-1); i++)
+            //discard 1st and last
+            for (int i = 1; i < (nbrRatings-1); i++)
             {
                 result += pointarray[i];
             }
