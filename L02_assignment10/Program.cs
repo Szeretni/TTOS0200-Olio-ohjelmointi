@@ -1,5 +1,7 @@
 ﻿/*Hannu Oksman
 Toteuta jokin oma villi-ideasi ja yllätä opettaja toteutuksellasi.
+
+TODO: coordinate must be empty when submitting turn?
 */
 using System;
 using System.Collections.Generic;

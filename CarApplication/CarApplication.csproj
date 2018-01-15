@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{553E6748-5A9C-4707-BC41-C2966533C1C9}</ProjectGuid>
+    <ProjectGuid>{1614FF4C-C0AB-4419-9F0D-654F31A8AA3B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L02_assignment06</RootNamespace>
-    <AssemblyName>L02_assignment06</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>CarApplication</RootNamespace>
+    <AssemblyName>CarApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemperatureConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
