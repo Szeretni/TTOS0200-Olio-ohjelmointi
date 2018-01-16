@@ -52,17 +52,21 @@ namespace L02_assignment10
             }
 
             //initialising playing
-            for (int i = 0; i < (fieldSize * 2); i++)
+            for (int i = 0; i < (fieldSize * fieldSize); i++)
             {
                 if (i % 2 == 0)
                 {
                     Console.Write("Player 0 turn. Type coordinates of your choice in xy-format: ");
                 }
                 
-                //at this point game field is full
                 else
                 {
-                    if (i == (fieldSize * 2 - 1)) break;
+                    //at this point game field is full
+                    if (i == (fieldSize * 2 - 1))
+                    {
+                        Console.WriteLine("Game over, neither won.");
+                        break;
+                    }
                     Console.Write("Player X turn. Type coordinates of your choice in xy-format: ");
                 }
                 Console.WriteLine();
@@ -88,7 +92,6 @@ namespace L02_assignment10
                 }
                 
             }
-            Console.WriteLine("Game over, neither won.");
         }
 
         //prints the current game state
