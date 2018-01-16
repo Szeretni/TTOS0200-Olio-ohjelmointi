@@ -52,14 +52,17 @@ namespace L02_assignment10
             }
 
             //initialising playing
-            for (int i = 0; ; i++)
+            for (int i = 0; i < (fieldSize * 2); i++)
             {
                 if (i % 2 == 0)
                 {
                     Console.Write("Player 0 turn. Type coordinates of your choice in xy-format: ");
                 }
+                
+                //at this point game field is full
                 else
                 {
+                    if (i == (fieldSize * 2 - 1)) break;
                     Console.Write("Player X turn. Type coordinates of your choice in xy-format: ");
                 }
                 Console.WriteLine();
@@ -83,7 +86,9 @@ namespace L02_assignment10
                     winPrint(winFlag);
                     break;
                 }
+                
             }
+            Console.WriteLine("Game over, neither won.");
         }
 
         //prints the current game state
@@ -111,79 +116,49 @@ namespace L02_assignment10
             char winFlag = ' ';
             char x0;
             string rowAdd, colAdd;
+
+            char[] possibilities = { 'X', '0' };
+
+            for (int i = 0; i < 2; i++)
+            {
+                x0 = possibilities[i];
+                //row check
+                rowAdd = "0";
+                colAdd = "+";
+                winFlag = winCondition(fieldSize, gameField, rowAdd, colAdd, x0);
+                if (winFlag != ' ') return winFlag;
+
+                //column check
+                rowAdd = "+";
+                colAdd = "0";
+                winFlag = winCondition(fieldSize, gameField, rowAdd, colAdd, x0);
+                if (winFlag != ' ') return winFlag;
+
+                //X diagonal top left to bottom right
+                rowAdd = "+";
+                colAdd = "+";
+                winFlag = winCondition(fieldSize, gameField, rowAdd, colAdd, x0);
+                if (winFlag != ' ') return winFlag;
+
+                //X diagonal top right to bottom left
+                rowAdd = "+";
+                colAdd = "-";
+                winFlag = winCondition(fieldSize, gameField, rowAdd, colAdd, x0);
+                if (winFlag != ' ') return winFlag;
+            }
             
-            //X row check
-            x0 = 'X';
-            rowAdd = "0";
-            colAdd = "+";
-            winFlag = improved(fieldSize, gameField, rowAdd, colAdd, x0);
-            if (winFlag != ' ') return winFlag;
-
-            //0 row check
-            x0 = '0';
-            rowAdd = "0";
-            colAdd = "+";
-            winFlag = improved(fieldSize, gameField, rowAdd, colAdd, x0);
-            if (winFlag != ' ') return winFlag;
-
-            //X column check
-            x0 = 'X';
-            colAdd = "0";
-            rowAdd = "+";
-            winFlag = improved(fieldSize, gameField, rowAdd, colAdd, x0);
-            if (winFlag != ' ') return winFlag;
-
-            //0 column check
-            x0 = '0';
-            colAdd = "0";
-            rowAdd = "+";
-            winFlag = improved(fieldSize, gameField, rowAdd, colAdd, x0);
-            if (winFlag != ' ') return winFlag;
-
-            //X diagonal top left to bottom right
-            x0 = 'X';
-            colAdd = "+";
-            rowAdd = "+";
-            winFlag = improved(fieldSize, gameField, rowAdd, colAdd, x0);
-            if (winFlag != ' ') return winFlag;
-
-            //X diagonal top right to bottom left
-            x0 = 'X';
-            colAdd = "-";
-            rowAdd = "+";
-            winFlag = improved(fieldSize, gameField, rowAdd, colAdd, x0);
-            if (winFlag != ' ') return winFlag;
-
-            //0 diagonal top left to bottom right
-            x0 = '0';
-            colAdd = "+";
-            rowAdd = "+";
-            winFlag = improved(fieldSize, gameField, rowAdd, colAdd, x0);
-            if (winFlag != ' ') return winFlag;
-
-            //0 diagonal top right to bottom left
-            x0 = '0';
-            colAdd = "-";
-            rowAdd = "+";
-            winFlag = improved(fieldSize, gameField, rowAdd, colAdd, x0);
-            if (winFlag != ' ') return winFlag;
-
             return winFlag;
         }
 
+        //prints win text
         static void winPrint(char winFlag)
         {
-            if (winFlag == 'X')
-            {
-                Console.WriteLine("Player X won!");
-            }
-            if (winFlag == '0')
-            {
-                Console.WriteLine("Player 0 won!");
-            }
+            if (winFlag == 'X') Console.WriteLine("Player X won!");
+            if (winFlag == '0') Console.WriteLine("Player 0 won!");
         }
 
-        static char improved(int fieldSize, char[,] gameField, string rowAdd, string colAdd, char x0)
+        //checks how many same chars are in row/column/diagonal
+        static char winCondition(int fieldSize, char[,] gameField, string rowAdd, string colAdd, char x0)
         {
             char winFlag = ' ';
             int a = 0, b = 0;
@@ -196,7 +171,6 @@ namespace L02_assignment10
                     if (gameField[j, k] == x0)
                     {
                         //checks if next is also own
-                        //own char (X/0) lenght to win is fieldsize -2 (bc borders)
                         for (int l = 0; l < fieldSize; l++)
                         {
                             //checks next char
@@ -204,7 +178,8 @@ namespace L02_assignment10
                             if (rowAdd == "-") a--;
                             if (colAdd == "+") b++;
                             if (colAdd == "-") b--;
-                            
+
+                            //own char (X/0) lenght to win is fieldsize -2 (bc borders)
                             if (a == fieldSize - 2 || b == fieldSize - 2)
                             {
                                 winFlag = x0;
