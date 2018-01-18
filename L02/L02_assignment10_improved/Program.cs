@@ -76,6 +76,7 @@ namespace L02_assignment10
                     playerInput[j] = Console.Read();
                 }
                 Console.ReadLine();
+                Console.Clear();
                 printField(playerInput, fieldSize, ref gameField, i);
 
                 //checking if win

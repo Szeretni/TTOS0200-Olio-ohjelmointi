@@ -22,9 +22,15 @@ namespace L02_assignment05
     {
         static void Main(string[] args)
         {
+
+            //height of tree's foot
             int trunkHeight = 2;
+
+            //ask tree's height from user
             Console.Write("Give a number: ");
             int height = System.Convert.ToInt32(Console.ReadLine());
+
+            //printing
             for (int i = 0; i < height; i++)
             {
                 int j;
@@ -38,7 +44,11 @@ namespace L02_assignment05
                 {
                     j = 0;
                 }
+
+                //printing white space
                 printSpace(height, j, trunkHeight);
+
+                //printing twigs
                 printStar(j);
                 Console.WriteLine();
             }
