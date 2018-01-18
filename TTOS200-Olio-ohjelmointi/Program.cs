@@ -34,7 +34,7 @@ namespace TTOS200_Olio_ohjelmointi
 }
 */
 
-
+/*
 namespace TTOS200_Olio_ohjelmointi
 {
     class Program
@@ -50,5 +50,28 @@ namespace TTOS200_Olio_ohjelmointi
             test[101] = "Last string";
             Console.WriteLine(test[101]);
         }
+    }
+}
+*/
+
+    namespace TTOS200_Olio_ohjelmointi
+{
+    class Program
+    {
+        //stringbuilder testing
+        static void Main(string[] args)
+        {
+            StringBuilder str1 = new StringBuilder();
+            str1.Append(new char[] { 'D' });
+            Console.WriteLine(str1);
+            Console.WriteLine(str1.Length);
+            string str2 = "asdfasdf";
+            Console.WriteLine("{0} chars: {1}", str1.Length, str1.ToString());
+            string str3 = str1.ToString();
+            if (str1.ToString() == str2) Console.WriteLine("Match");
+            else Console.WriteLine("Epic fail");
+            if (str3 == str2) Console.WriteLine("Match");
+            else Console.WriteLine("Epic fail");
+        }           
     }
 }
