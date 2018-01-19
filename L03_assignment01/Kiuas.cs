@@ -8,17 +8,60 @@ namespace L03_assignment01
 {
     class Kiuas
     {
-        public string containerMaterial = "Steel";
-        public string stoneMaterial = "RandomStone";
-        public string heatingSystem = "woodComsumption";
-        public int PowerStatus
+        public int CurrentTemperature
+        {
+            get
+            {
+                return currentTemperature;
+            }
+        }
+
+        public int CurrentHumidity
+        {
+            get
+            {
+                return currentHumidity;
+            }
+        }
+
+        public string KiuasInfo
+        {
+            get
+            {
+                return "\nMaterial: " + containerMaterial + ", stones: " + stoneMaterial + " and heating system: " + heatingSystemType
+                    + "\nPower on: " + PowerStatus + ", current temperature: " + currentTemperature + " and current humidity: " + currentHumidity
+                    + "\nDesired temperature: " + SetTemperature + " and desired humidity: " + SetHumidity
+                    ;
+            }
+        }
+        public bool PowerStatus
         {
             get;set;
         }
-        public int currentTemperature;
-        public int setTemperature;
-        public int currentHumidity;
-        public int setHumidity;
+
+        public int SetTemperature
+        {
+            get
+            {
+                return setTemperature;
+            }
+                set
+            {
+                setTemperature = value;
+            }
+        }
+
+        public int SetHumidity
+        {
+            get
+            {
+                return setHumidity;
+            }
+            set
+            {
+                setHumidity = value;
+            }
+        }
 
         public bool Power(int powerStatus)
         {
@@ -27,48 +70,55 @@ namespace L03_assignment01
             return power;
         }
 
+        private string containerMaterial = "Steel";
+        private string stoneMaterial = "RandomStone";
+        private string heatingSystemType = "Electrical";
+        private int setTemperature = 50;
+        private int setHumidity = 50;
+        private int currentTemperature = 60;
+        private int currentHumidity = 90;
+        /*
+                public int SetTemperature(int currentTemperature, int setTemperature, int PowerStatus)
+                {
+                    if (PowerStatus == 0) Console.WriteLine("Unavailable, power is not on!");
+                    else
+                    {
+                        if (currentTemperature >= setTemperature)
+                        {
+                            PowerStatus = 0;
+                            Power(PowerStatus);
+                            Console.WriteLine("Temp reached, heating: " + Power(PowerStatus));
+                        }
+                        else
+                        {
+                            PowerStatus = 1;
+                            Power(PowerStatus);
+                            Console.WriteLine("Temp not reached, heating: " + Power(PowerStatus));
+                        }
+                    }
+                    return 0;
+                }
 
-
-        public int SetTemperature(int currentTemperature, int setTemperature, int PowerStatus)
-        {
-            if (PowerStatus == 0) Console.WriteLine("Unavailable, power is not on!");
-            else
-            {
-                if (currentTemperature >= setTemperature)
+                public int SetHumidity(int currentHumidity, int setHumidity, int PowerStatus)
                 {
-                    PowerStatus = 0;
-                    Power(PowerStatus);
-                    Console.WriteLine("Temp reached, heating: " + Power(PowerStatus));
+                    if (PowerStatus == 0) Console.WriteLine("Unavailable, power is not on!");
+                    else
+                    {
+                        if (currentHumidity >= setHumidity)
+                        {
+                            PowerStatus = 0;
+                            Power(PowerStatus);
+                            Console.WriteLine("Humidity reached, humidity: " + Power(PowerStatus));
+                        }
+                        else
+                        {
+                            PowerStatus = 1;
+                            Power(PowerStatus);
+                            Console.WriteLine("Humidity not reached, humidity: " + Power(PowerStatus));
+                        }
+                    }
+                    return 0;
                 }
-                else
-                {
-                    PowerStatus = 1;
-                    Power(PowerStatus);
-                    Console.WriteLine("Temp not reached, heating: " + Power(PowerStatus));
-                }
-            }
-            return 0;
-        }
-
-        public int SetHumidity(int currentHumidity, int setHumidity, int PowerStatus)
-        {
-            if (PowerStatus == 0) Console.WriteLine("Unavailable, power is not on!");
-            else
-            {
-                if (currentHumidity >= setHumidity)
-                {
-                    PowerStatus = 0;
-                    Power(PowerStatus);
-                    Console.WriteLine("Humidity reached, humidity: " + Power(PowerStatus));
-                }
-                else
-                {
-                    PowerStatus = 1;
-                    Power(PowerStatus);
-                    Console.WriteLine("Humidity not reached, humidity: " + Power(PowerStatus));
-                }
-            }
-            return 0;
-        }
+        */
     }
 }
