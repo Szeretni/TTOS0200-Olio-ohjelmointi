@@ -72,6 +72,18 @@ namespace TTOS200_Olio_ohjelmointi
             else Console.WriteLine("Epic fail");
             if (str3 == str2) Console.WriteLine("Match");
             else Console.WriteLine("Epic fail");
+
+            Console.WriteLine("\n\nBelow is meaningful print\n\n");
+            StringBuilder strbld = new StringBuilder(Int16.MaxValue);
+            string _1string = "asfdqerw";
+            strbld.Append(_1string);
+            strbld.Append(_1string);
+            Console.WriteLine(strbld);
+            Console.WriteLine("{0} chars: {1}", strbld.Length, strbld.ToString());
+            string asdf = "asdf";
+            string qwer = "qwer";
+            asdf += qwer;
+            Console.WriteLine(asdf);
         }           
     }
 }
