@@ -20,8 +20,14 @@ namespace L05_assignment01
         public static bool DateValidator(string input)
         {
             CultureInfo fi = new CultureInfo("fi-FI");
-            DateTime boolDate = new DateTime(2018,1,1);
-            bool result = DateTime.TryParse(input,fi,DateTimeStyles.None,out boolDate);
+            string dateStr = "d";
+            string montStr = "M";
+            string yeareStr = "y";
+
+            //string[] formats = { "d.M.yy", "d.MM.yy", "dd.M.yyyy", "d.M.yyyy", "dd.M.yy", "dd.MM.yy", "dd.MM.yy", "dd.MM.yyyy" };          
+            DateTime boolDate = DateTime.Today;
+            //input = input + " 0.0.0";
+            bool result = DateTime.TryParseExact(input, formats, fi, DateTimeStyles.AllowLeadingWhite, out boolDate);
             return result;
         }
     }
