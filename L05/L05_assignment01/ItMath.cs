@@ -23,8 +23,66 @@ namespace L05_assignment01
             string dateStr = "d";
             string montStr = "M";
             string yearStr = "yy";
+            string dotSrt = ".";
             int arraySize = (int)Math.Pow(2, 3);
             string[] formats = new string[arraySize];
+            for (int i = 0; i < arraySize; i++)
+            {
+                if (i % 2 == 0) formats[i] += dateStr + dotSrt;
+                else formats[i] += dateStr + dateStr + dotSrt;
+            }
+            for (int i = 0; i < arraySize; i++)
+            {
+                if (i % 2 == 0) formats[i] += montStr + dotSrt;
+                else formats[i] += montStr + montStr + dotSrt;
+            }
+            for (int i = 0; i < arraySize; i++)
+            {
+                if (i % 2 == 0) formats[i] += yearStr;
+                else formats[i] += yearStr + yearStr;
+            }
+            for (int i = 0; i < arraySize; i++) Console.WriteLine(formats[i]);
+            /*
+            int ind = 0;
+            for (int i = 0; i < 2; i++)
+            {
+                switch(i)
+                {
+                    case 0:
+                        formats[ind] = formats[ind] + dateStr + ".";
+                        break;
+                    case 1:
+                        formats[ind] = formats[ind] + dateStr + dateStr + ".";
+                        break;
+                }
+                for (int j = 0; j< 2; j++)
+                {
+                    switch (j)
+                    {
+                        case 0:
+                            formats[ind] = formats[ind] + montStr + ".";
+                            break;
+                        case 1:
+                            formats[ind] = formats[ind] + montStr + montStr + ".";
+                            break;
+                    }
+                    for (int k = 0; k < 2; k++)
+                    {
+                        switch (k)
+                        {
+                            case 0:
+                                formats[ind] = formats[ind] + yearStr;
+                                break;
+                            case 1:
+                                formats[ind] = formats[ind] + yearStr + yearStr;
+                                break;
+                        }
+                        ind++;
+                    }
+                }
+            }
+            */
+            /*
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < arraySize;j++)
@@ -81,6 +139,7 @@ namespace L05_assignment01
                     }
                 }
             }
+            */
             /*int arrayIndex = 0;
             for (int i = 1; i < 3;i++ )
             {
