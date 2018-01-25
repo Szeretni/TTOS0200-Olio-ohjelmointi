@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +54,7 @@ namespace TTOS200_Olio_ohjelmointi
     }
 }
 */
-
+/*//StringBuilder
     namespace TTOS200_Olio_ohjelmointi
 {
     class Program
@@ -85,5 +86,37 @@ namespace TTOS200_Olio_ohjelmointi
             asdf += qwer;
             Console.WriteLine(asdf);
         }           
+    }
+}
+*/
+
+//Cultureinfo
+namespace TTOS200_Olio_ohjelmointi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float number = 1050.75F;
+            DateTime today = DateTime.Today;
+
+            // Creates a CultureInfo for Finnish in Finland.
+            CultureInfo fi = new CultureInfo("fi-FI");
+            // Displays i formatted as currency for the Finland.
+            Console.WriteLine(number.ToString("c", fi));
+            Console.WriteLine(today.ToString("d", fi));
+
+            // Creates a CultureInfo for English in the U.S.
+            CultureInfo us = new CultureInfo("en-US");
+            // Display i formatted as currency for us.
+            Console.WriteLine(number.ToString("c", us));
+            Console.WriteLine(today.ToString("d", us));
+
+            // Creates a CultureInfo for Swedish in Sweden.
+            CultureInfo se = new CultureInfo("sv-SE");
+            // Displays i formatted as currency for Swedish people
+            Console.WriteLine(number.ToString("c", se));
+            Console.WriteLine(today.ToString("d", se));
+        }
     }
 }

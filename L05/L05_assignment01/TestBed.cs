@@ -10,14 +10,14 @@ namespace L05_assignment01
     {
         public void TestBedFloat()
         {
-            Console.Write("Giva an input: ");
+            Console.Write("Give an input: ");
             string input = Console.ReadLine();
             Console.WriteLine(ItMath.NumberValidator(input));
         }
 
         public void TestBedDate()
         {
-            Console.Write("Giva an input: ");
+            Console.Write("Give an input: ");
             string input = Console.ReadLine();
             Console.WriteLine(ItMath.DateValidator(input));
         }
