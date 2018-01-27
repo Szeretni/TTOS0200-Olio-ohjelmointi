@@ -21,18 +21,46 @@ namespace L05_assignment03
 
         public static int Sum(string input)
         {
+            //initialization
             int sum = 0;
-            
-            return 0;
+            int strInt = 0;
+            List<string> stringNum = new List<string>();
+            string charString = "";
+
+            //reading chars from input
+            foreach (char c in input)
+            {
+                //add char to temp string
+                if (c != ',')
+                {
+                    //charString = charString + c;
+                    charString += c;
+                }
+                //add temp string to list and clear temp string
+                if (c == ',')
+                {
+                    stringNum.Add(charString);
+                    charString = "";
+                }
+            }
+
+            //list strings to int, sum ints
+            stringNum.Add(charString);
+            foreach (string e in stringNum)
+            {
+                strInt = int.Parse(e);
+                sum += strInt;
+                strInt = 0;
+            }
+            return sum;
         }
 
         public static int Average(string input)
         {
-            return 0;
+            int elements = Count(input);
+            int sum = Sum(input);
+            int average = sum / elements;
+            return average;
         }
-
-        //private int count = 0;
-        //private int sum = 0;
-        //private int average = 0;
     }
 }
