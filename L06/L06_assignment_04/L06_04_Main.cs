@@ -10,7 +10,8 @@ namespace L06_assignment_04
     {
         static void Main(string[] args)
         {
-
+            MediaClass nightwish = new MediaClass();
+            
         }
     }
 }

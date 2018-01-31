@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeviceClass.cs" />
+    <Compile Include="InfoClass.cs" />
     <Compile Include="L06_04_Main.cs" />
+    <Compile Include="MediaClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
