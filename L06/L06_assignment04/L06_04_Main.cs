@@ -11,7 +11,12 @@ namespace L06_assignment_04
         static void Main(string[] args)
         {
             MediaClass nightwish = new MediaClass();
-            
+            nightwish.Name = "Some Album";
+            nightwish.Genre = "Rock?";
+
+            DeviceClass laptop = new DeviceClass();
+            laptop.Name = "Samsung";
+            laptop.Type = "Laptop";
         }
     }
 }
