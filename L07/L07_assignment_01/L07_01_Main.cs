@@ -10,12 +10,12 @@ namespace L07_assignment_01
     {
         static void Main(string[] args)
         {
-            Tyre hakkapeliitta = new Tyre("Nokia,","Hakkapeliitta","205R16");
             Vehicle porsche = new Vehicle("Porsche", "911", 4, "hakkapeliitta");
-            /*
-            Vehicle vehicle = new Vehicle("Audi","A5",4,"Hakkapeliitta");
-            foreach (Tyre tyre in vehicle.tyres) Console.WriteLine(tyre.Trademark);
-            */
+
+            porsche.VehicleInfo();
+
+            Vehicle ducati = new Vehicle("Ducati", "Diavel", 2, "mic");
+            ducati.VehicleInfo();
         }
     }
 }
