@@ -15,6 +15,38 @@ namespace TTOS200_Olio_ohjelmointi
     }
 }
 */
+namespace TTOS200_Olio_ohjelmointi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int i = 1;
+            int j = ++i;
+            Console.WriteLine(i + " " + j);
+            int k = 1;
+            int l = k++;
+            Console.WriteLine(k + " " + l);
+        }
+    }
+}
+/*
+namespace TTOS200_Olio_ohjelmointi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var varint = 5;
+            Console.WriteLine(varint);
+            var varstr = "str";
+            Console.WriteLine(varstr);
+        }
+    }
+}
+*/
 /*
 //ASCII-print
 namespace TTOS200_Olio_ohjelmointi
@@ -89,7 +121,7 @@ namespace TTOS200_Olio_ohjelmointi
     }
 }
 */
-
+/*
 //Cultureinfo
 namespace TTOS200_Olio_ohjelmointi
 {
@@ -119,4 +151,4 @@ namespace TTOS200_Olio_ohjelmointi
             Console.WriteLine(today.ToString("d", se));
         }
     }
-}
+}*/

@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F705233E-9A20-47C6-9B18-A002691C167B}</ProjectGuid>
+    <ProjectGuid>{9582199E-4D89-4AA0-8576-5AA85690DE2E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L07_assignment_06</RootNamespace>
-    <AssemblyName>L07_assignment_06</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>L08_assignment_01</RootNamespace>
+    <AssemblyName>L08_assignment_01</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,12 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Computer.cs" />
-    <Compile Include="L07_06_Main.cs" />
-    <Compile Include="Motherboard.cs" />
-    <Compile Include="Processor.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="L08_01_Main.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RAM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
