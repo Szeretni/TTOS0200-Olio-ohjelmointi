@@ -15,10 +15,32 @@ namespace L08_assignment_01
         }
 
         //properties
-        private string Name { get; set; }
-        private List<Order> orders = new List<Order>();
+        public string Name { get; set; }
+        public List<Order> orders = new List<Order>();
 
         //methods
+
+        //listing buyable items
+        public void AvailableItems(List<OrderItem> orderItemList)
+        {
+            foreach (OrderItem oi in orderItemList)
+            {
+                oi.ListItems();
+            }
+        }
+
+        //creating order
+        public void CreateOrder()
+        {
+            Console.Write("Add items to your order.\nGive item's name: ");
+            string name = Console.ReadLine();
+            Console.Write("How many pieces? ");
+            int amount = 0;
+            bool intParse = int.TryParse(Console.ReadLine(), out amount);
+            Order order = new Order(name, amount);
+        }
+    }
+        /*
         public void ShowOrders()
         {
             foreach (Order e in orders)
@@ -34,5 +56,5 @@ namespace L08_assignment_01
         {
             orders.Add(new Order());
         }
-    }
+        */
 }
