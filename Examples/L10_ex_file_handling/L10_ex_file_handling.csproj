@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCD16574-01B8-41A6-8DEE-0B9F10AFA650}</ProjectGuid>
+    <ProjectGuid>{A1C5FD99-99C6-48DE-AA57-96FEAE850963}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L08_assignment_02</RootNamespace>
-    <AssemblyName>L08_assignment_02</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>L10_ex_file_handling</RootNamespace>
+    <AssemblyName>L10_ex_file_handling</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,9 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PaidWithCard.cs" />
-    <Compile Include="PaidWithCash.cs" />
-    <Compile Include="L08_02_Main.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
