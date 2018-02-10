@@ -11,19 +11,24 @@ namespace L09_assignment_01
         //collection
         static List<Student> student = new List<Student>();
 
-        //AsioID generation0, used in AddStudent-method
-        static int AsioIDint = 1;
-        static char AsioIDstr = 'A';
-
+        //AsioID generation, used in AddStudent-method
+        static int AsioIDint = 0;
+        static char AsioIDstr = 'Z';
+        
         //methods
-        static void AddStudent(ref int AsioIDint, ref char AsioIDstr)
+        static string GenerateAsioID(ref int AsioIDint, ref char AsioIDstr)
         {
             string AsioID = AsioIDstr.ToString();
-            for (int i = 0; i<4;i++)
+            for (int i = 0; i < 4; i++)
             {
                 AsioID += AsioIDint.ToString();
             }
-            
+            return AsioID;
+        }
+
+        static void AddStudent(string firstname, string lastname, string group)
+        {
+            string AsioID = GenerateAsioID(ref AsioIDint, ref AsioIDstr);
             //checks list if given id already exists
             bool checkExistence = false;
             foreach (Student s in student)
@@ -37,7 +42,8 @@ namespace L09_assignment_01
             //if new, create student
             if (!checkExistence)
             {
-                student.Add(new Student(AsioID));
+                student.Add(new Student(AsioID,firstname,lastname,group));
+                //updates for AsioID-generation
                 if (AsioIDint == 10)
                 {
                     AsioIDint = 1;
@@ -116,14 +122,25 @@ namespace L09_assignment_01
         static void Main(string[] args)
         {
             //adding students
-            AddStudent(ref AsioIDint, ref AsioIDstr);
-            
+            AddStudent("Masa","Niemi","");
+            AddStudent("Allan", "Aalto", "");
+            AddStudent("Hanna", "Husso", "");
+            AddStudent("Teppo", "Testaaja", "TTV17S1");
 
-            //going through the list
+            //first and last
+            Console.WriteLine("The First Student in the MiniASIO is:\n{0}", student.First().ToString());
+            Console.WriteLine("The Last Student in the MiniASIO is:\n{0}", student.Last().ToString());
+            Console.WriteLine();
+            
+            //all students
             foreach (Student s in student)
             {
-                Console.WriteLine("Student's AsioID: {0}", s.AsioID);
+                Console.WriteLine(s.ToString());
             }
+            Console.WriteLine();
+
+            //alphabetical order
+
 
             /*used to validate project
             AddStudent("asdf123");

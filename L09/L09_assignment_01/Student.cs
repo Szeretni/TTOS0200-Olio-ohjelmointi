@@ -8,27 +8,27 @@ namespace L09_assignment_01
 {
     class Student
     {
-        //constructors
-        public Student (string AsioID)
+        //constructor
+        public Student (string AsioID, string FirstName, string LastName,string Group)
         {
             this.AsioID = AsioID;
-            Console.WriteLine("New student with AsioID {0} created.", AsioID);
-        }
-
-        public Student(string FirstName,string LastName)
-        {
             this.FirstName = FirstName;
             this.LastName = LastName;
-            //leftover: Console.WriteLine("New student with AsioID {0} created.", AsioID);
+            this.Group = Group;
+            //Console.WriteLine("New student with AsioID {0} created.", AsioID);
         }
 
         //destructor
         ~Student()
         {
-            Console.WriteLine("Student with AsioID {0} is removed.", AsioID);
+            //Console.WriteLine("Student with AsioID {0} is removed.", AsioID);
         }
 
         //methods
+        public override string ToString()
+        {
+            return FirstName + " " + LastName + " " + AsioID + " " + Group;
+        }
 
         //properties
         public string AsioID { get; set; }
