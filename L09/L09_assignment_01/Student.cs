@@ -8,52 +8,32 @@ namespace L09_assignment_01
 {
     class Student
     {
-        //constructor
+        //constructors
         public Student (string AsioID)
         {
             this.AsioID = AsioID;
+            Console.WriteLine("New student with AsioID {0} created.", AsioID);
+        }
+
+        //destructor
+        ~Student()
+        {
+            Console.WriteLine("Student with AsioID {0} is removed.", AsioID);
         }
 
         //methods
-        /*
-        public void RemoveStudent(string AsioID)
-        {
-            foreach (Student s in student)
-            {
-                if (s.AsioID == AsioID)
-                {
-                    student.Remove(s);
-                }
-            }
-        }
-        */
-
-        public void ModifyStudent(string AsioID)
-        {
-            Console.WriteLine("1) Modify First Name");
-            Console.WriteLine("2) Modify Last Name");
-            Console.WriteLine("3) Modify Group");
-            int selection;
-            bool r = int.TryParse(Console.ReadLine(),out selection);
-            switch (selection)
-            {
-                case 1:
-                    Console.Write("Type new first name: ");
-                    break;
-            }
-
-        }
-
-        //autos
-        private string FirstName { get; set; }
-        private string LastName { get; set; }
-        private string Group { get; set; }
-        private string AsioID { get; set; }
 
         //properties
+        public string AsioID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Group { get; set; }
+        
+        /* never used
         private string firstName;
         private string lastName;
         private string group;
         private string asioID;
+        */
     }
 }
