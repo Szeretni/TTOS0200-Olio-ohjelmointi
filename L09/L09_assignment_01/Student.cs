@@ -15,6 +15,13 @@ namespace L09_assignment_01
             Console.WriteLine("New student with AsioID {0} created.", AsioID);
         }
 
+        public Student(string FirstName,string LastName)
+        {
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            //leftover: Console.WriteLine("New student with AsioID {0} created.", AsioID);
+        }
+
         //destructor
         ~Student()
         {
