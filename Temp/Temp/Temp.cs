@@ -21,6 +21,22 @@ namespace TTOS200_Olio_ohjelmointi
     {
         static void Main(string[] args)
         {
+            char c = 'A';
+            for (int i = 0; i<26;i++)
+            {
+                Console.WriteLine(c);
+                c++;
+            }
+        }
+    }
+}
+/*
+namespace TTOS200_Olio_ohjelmointi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
 
             int i = 1;
             int j = ++i;
@@ -31,6 +47,7 @@ namespace TTOS200_Olio_ohjelmointi
         }
     }
 }
+*/
 /*
 namespace TTOS200_Olio_ohjelmointi
 {
