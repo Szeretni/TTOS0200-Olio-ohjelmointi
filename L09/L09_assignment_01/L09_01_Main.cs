@@ -11,11 +11,10 @@ namespace L09_assignment_01
         //collection
         static List<Student> student = new List<Student>();
 
+        //methods
         //AsioID generation, used in AddStudent-method
         static int AsioIDint = 0;
         static char AsioIDstr = 'Z';
-        
-        //methods
         static string GenerateAsioID(ref int AsioIDint, ref char AsioIDstr)
         {
             string AsioID = AsioIDstr.ToString();
@@ -44,7 +43,7 @@ namespace L09_assignment_01
             {
                 student.Add(new Student(AsioID,firstname,lastname,group));
                 //updates for AsioID-generation
-                if (AsioIDint == 10)
+                if (AsioIDint == 9)
                 {
                     AsioIDint = 1;
                 }
@@ -119,6 +118,18 @@ namespace L09_assignment_01
             }
         }
 
+        static void GiveStudentParameters()
+        {
+            Console.WriteLine("Please, give data of a new student");
+            Console.Write("First name: ");
+            string firstname = Console.ReadLine();
+            Console.Write("Last name: ");
+            string lastname = Console.ReadLine();
+            Console.Write("Group: ");
+            string group = Console.ReadLine();
+            AddStudent(firstname, lastname, group);
+        }
+
         static void Main(string[] args)
         {
             //adding students
@@ -131,8 +142,9 @@ namespace L09_assignment_01
             Console.WriteLine("The First Student in the MiniASIO is:\n{0}", student.First().ToString());
             Console.WriteLine("The Last Student in the MiniASIO is:\n{0}", student.Last().ToString());
             Console.WriteLine();
-            
+
             //all students
+            Console.WriteLine("The all students in MiniAsio:");
             foreach (Student s in student)
             {
                 Console.WriteLine(s.ToString());
@@ -140,7 +152,32 @@ namespace L09_assignment_01
             Console.WriteLine();
 
             //alphabetical order
+            student.Sort((x, y) => x.LastName.CompareTo(y.LastName));
 
+            //all students
+            Console.WriteLine("The all students in alphabetical order in MiniAsio:");
+            foreach (Student s in student)
+            {
+                Console.WriteLine(s.ToString());
+            }
+            Console.WriteLine();
+
+            //add custom student
+            GiveStudentParameters();
+            Console.WriteLine();
+
+            //add many students
+            for (int i = 0;i<50;i++)
+            {
+                AddStudent(i.ToString(), "", "");
+            }
+
+            //all students
+            Console.WriteLine("The all students in MiniAsio:");
+            foreach (Student s in student)
+            {
+                Console.WriteLine(s.ToString());
+            }
 
             /*used to validate project
             AddStudent("asdf123");
