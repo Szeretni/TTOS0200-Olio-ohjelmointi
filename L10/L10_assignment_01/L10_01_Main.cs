@@ -45,7 +45,6 @@ namespace JAMK.IT
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -58,7 +57,6 @@ namespace JAMK.IT
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                
             }
         }
     }
