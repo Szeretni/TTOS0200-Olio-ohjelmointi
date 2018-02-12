@@ -20,7 +20,7 @@ namespace L09_assignment_07
         static void Main(string[] args)
         {
             //properties
-            int size = 10000;
+            int size = 30000;
 
             //collection
             List<Person> list = new List<Person>();
@@ -38,7 +38,7 @@ namespace L09_assignment_07
             //generation time for list
             TimeSpan tsgl = Stop - Init;
 
-            //printing random 1000 persons
+            //printing random persons
             Init = DateTime.Now;
             for (int i = 0;i<size*0.1;i++)
             {
@@ -87,7 +87,7 @@ namespace L09_assignment_07
             //generation time for dict
             TimeSpan tsgd = Stop - Init;
 
-            //printing random 1000 persons
+            //printing random persons
             Init = DateTime.Now;
             for (int i = 0; i < size*0.1; i++)
             {
@@ -110,11 +110,11 @@ namespace L09_assignment_07
 
             /*
             List:
-            Time to generate persons list: 31,2346
-            Time to print persons list: 281,5852
+            Time to generate persons list: 62,5173
+            Time to print persons list: 961,234
             Dict:
-            Time to generate persons dict: 31,2699
-            Time to print persons dict: 296,8616
+            Time to generate persons dict: 95,079
+            Time to print persons dict: 927,1533
             */
         }
     }
