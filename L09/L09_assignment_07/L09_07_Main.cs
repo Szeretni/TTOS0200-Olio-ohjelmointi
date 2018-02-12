@@ -35,7 +35,8 @@ namespace L09_assignment_07
                 list.Add(new Person(random));
             }
             DateTime Stop = DateTime.Now;
-            int genTimeL = Stop.Millisecond - Init.Millisecond;
+            //generation time for list
+            TimeSpan tsgl = Stop - Init;
 
             //printing random 1000 persons
             Init = DateTime.Now;
@@ -45,7 +46,8 @@ namespace L09_assignment_07
                 Console.WriteLine(list.ElementAt(rand).ToString());
             }
             Stop = DateTime.Now;
-            int priTimeL = Stop.Millisecond - Init.Millisecond;
+            //pring time for list
+            TimeSpan tspl = Stop - Init;
             
             //dict
             Dictionary<string, Person> dictionary = new Dictionary<string, Person>();
@@ -82,7 +84,8 @@ namespace L09_assignment_07
                 } while (!success);
             }
             Stop = DateTime.Now;
-            int genTimeD = Stop.Millisecond - Init.Millisecond;
+            //generation time for dict
+            TimeSpan tsgd = Stop - Init;
 
             //printing random 1000 persons
             Init = DateTime.Now;
@@ -90,33 +93,28 @@ namespace L09_assignment_07
             {
                 int rand = random.Next(0, size);
                 Console.WriteLine(dictionary.ElementAt(rand).Value.ToString());
-                /*
-                if (rand <= dictionary.Count)
-                {
-                    Console.WriteLine(dictionary.ElementAt(rand));
-                }
-                */
             }
             Stop = DateTime.Now;
-            int priTimeD = Stop.Millisecond - Init.Millisecond;
-            
+            //print time for dict
+            TimeSpan tspd = Stop - Init;
+
             //printing elapsed times
             Console.WriteLine("List:");
-            Console.WriteLine("Time to generate persons: " + genTimeL);
-            Console.WriteLine("Time to print persons: " + priTimeL);
-            
+            Console.WriteLine("Time to generate persons list: " + tsgl.TotalMilliseconds);
+            Console.WriteLine("Time to print persons list: " + tspl.TotalMilliseconds);
+
             //printing elapsed times
-            Console.WriteLine("Dict:");
-            Console.WriteLine("Time to generate persons: " + genTimeD);
-            Console.WriteLine("Time to print persons: " + priTimeD);
+            Console.WriteLine("Dict:"); 
+            Console.WriteLine("Time to generate persons dict: " + tsgd.TotalMilliseconds);
+            Console.WriteLine("Time to print persons dict: " + tspd.TotalMilliseconds);
 
             /*
             List:
-            Time to generate persons: 24
-            Time to print persons: 107
+            Time to generate persons list: 31,2346
+            Time to print persons list: 281,5852
             Dict:
-            Time to generate persons: 40
-            Time to print persons: 85
+            Time to generate persons dict: 31,2699
+            Time to print persons dict: 296,8616
             */
         }
     }
