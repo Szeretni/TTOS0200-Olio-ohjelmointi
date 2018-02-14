@@ -40,7 +40,10 @@ namespace L10_assignment_05
                 //code from L09_06_Main.cs
                 Stream writeStream = new FileStream("TVObjects.bin", FileMode.Create, FileAccess.Write, FileShare.None);
                 IFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(writeStream, list);
+                foreach (TV_Program t in list)
+                {
+                    formatter.Serialize(writeStream, t);
+                }
                 writeStream.Close();
             }
             catch (Exception ex)
@@ -49,21 +52,22 @@ namespace L10_assignment_05
             }
             */
             //deserialization
+            IFormatter formatter = new BinaryFormatter();
+            Stream readStream = new FileStream("TVObjects.bin", FileMode.Open, FileAccess.Read, FileShare.None);
             while (true)
             {
                 try
                 {
-                    IFormatter formatter = new BinaryFormatter();
-                    Stream readStream = new FileStream("TVObjects.bin", FileMode.Open, FileAccess.Read, FileShare.None);
-                    list = (List<TV_Program>)formatter.Deserialize(readStream);
+                    list.Add((TV_Program)formatter.Deserialize(readStream));
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    //works
+                    //Console.WriteLine(ex.Message);
                     break;
                 }
             }
-
+            
             //printing objects
             try
             {
@@ -76,6 +80,10 @@ namespace L10_assignment_05
             {
                 Console.WriteLine(ex.Message);
             }
+            /*deserailization works, print below:
+            Name Real Madrid vs. PSG Channel Viasat StartTime 20180214T21:00:00Z StopTime 20180215T00:30:00Z InfoText Uefa Champions League
+            Name Porto vs. Liverpool Channel Viasat StartTime 20180214T21:30:00Z StopTime 20180215T00:00:00Z InfoText Uefa Champions League
+            */
         }
     }
 }
