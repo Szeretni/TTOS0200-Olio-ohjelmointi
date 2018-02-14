@@ -20,9 +20,9 @@ namespace L10_assignment_05
     {
         static void Main(string[] args)
         {
-            /*IN COMMENTS TO VALIDATE DESERIALIZATION
             //collection
             List<TV_Program> list = new List<TV_Program>();
+            /*IN COMMENTS TO VALIDATE DESERIALIZATION
             //creating tv-programs
             try
             {
@@ -49,16 +49,19 @@ namespace L10_assignment_05
             }
             */
             //deserialization
-            List<TV_Program> list = new List<TV_Program>(); ;
-            try
+            while (true)
             {
-                IFormatter formatter = new BinaryFormatter();
-                Stream readStream = new FileStream("TVObjects.bin", FileMode.Open, FileAccess.Read, FileShare.None);
-                list = (List<TV_Program>)formatter.Deserialize(readStream);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                try
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    Stream readStream = new FileStream("TVObjects.bin", FileMode.Open, FileAccess.Read, FileShare.None);
+                    list = (List<TV_Program>)formatter.Deserialize(readStream);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    break;
+                }
             }
 
             //printing objects
