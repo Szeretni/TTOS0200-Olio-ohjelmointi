@@ -23,7 +23,7 @@ namespace L10_assignment_02
                 //List<string> list = new List<string>();
 
                 //file handling
-                string myfile = @"D:\l2912\nimet.txt";
+                string myfile = @"C:\Users\Hannu\Documents\l2912\nimet.txt";
                 //tarkistaa onko olemassa
                 if (File.Exists(myfile))
                 {
@@ -42,17 +42,16 @@ namespace L10_assignment_02
                         namesDict.Add(s, 0);
                     }
 
-                    //update dict values
+                    //update dict values to match occurances
                     foreach (string s in nameslist)
                     {
-                        foreach (string t in namesDict.Keys)
+                        if (namesDict.ContainsKey(s))
                         {
-                            if (s == t)
-                            {
-                                namesDict[t]++;
-                            }
+                            namesDict[s]++;
                         }
                     }
+
+
 
                     foreach (KeyValuePair<string,int> kvp in namesDict)
                     {
