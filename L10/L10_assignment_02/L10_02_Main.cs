@@ -23,7 +23,7 @@ namespace L10_assignment_02
                 //List<string> list = new List<string>();
 
                 //file handling
-                string myfile = @"C:\Users\Hannu\Documents\l2912\nimet.txt";
+                string myfile = @"D:\nimet.txt";
                 //tarkistaa onko olemassa
                 if (File.Exists(myfile))
                 {
@@ -51,7 +51,9 @@ namespace L10_assignment_02
                         }
                     }
 
-
+                    //sort by occurances
+                    int highest = namesDict.Values.Max();
+                    Console.WriteLine("Highest: " + highest);
 
                     foreach (KeyValuePair<string,int> kvp in namesDict)
                     {
