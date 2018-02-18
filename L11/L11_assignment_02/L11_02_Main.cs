@@ -60,7 +60,6 @@ namespace L11_assignment_02
             string searchFor = Console.ReadLine();
 
             //syntax tip https://stackoverflow.com/questions/415866/lambda-expressions-how-to-search-inside-an-object
-
             var finding = mailBook.Friends.Where(x => x.Name.StartsWith(searchFor));
             var formatting = string.Join("\n",finding.Select(x => x.Name + " " + x.Email));
             Console.WriteLine(formatting);
@@ -83,7 +82,7 @@ namespace L11_assignment_02
                 {
                     using (System.IO.StreamWriter sw = System.IO.File.AppendText(file))
                     {
-                        sw.WriteLine(name + ";" + email);
+                        sw.Write(name + ";" + email);
                     }
                 }
 
