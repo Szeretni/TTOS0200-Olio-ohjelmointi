@@ -60,9 +60,9 @@ namespace L11_assignment_02
             try
             {
                 string file = "tutut.csv";
-                if (System.IO.File.Exists(file))
+                if (File.Exists(file))
                 {
-                    using (System.IO.StreamWriter sw = System.IO.File.AppendText(file))
+                    using (StreamWriter sw = File.AppendText(file))
                     {
                         sw.WriteLine(name + ";" + email);
                     }
