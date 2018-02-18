@@ -42,54 +42,15 @@ namespace L11_assignment_02
                         Console.WriteLine("Invalid input");
                         break;
                     case "1":
-                        FindFriend(mailBook);
+                        mailBook.FindFriend();
                         break;
                     case "2":
-                        AddFriend(mailBook);
+                        mailBook.AddFriend();
                         break;
                     case "0":
                         quit = true;
                         break;
                 }
-            }
-        }
-
-        static void FindFriend(MailBook mailBook)
-        {
-            Console.Write("\nWrite your friend's name or beginning of the name:");
-            string searchFor = Console.ReadLine();
-
-            //syntax tip https://stackoverflow.com/questions/415866/lambda-expressions-how-to-search-inside-an-object
-            var finding = mailBook.Friends.Where(x => x.Name.StartsWith(searchFor));
-            var formatting = string.Join("\n",finding.Select(x => x.Name + " " + x.Email));
-            Console.WriteLine(formatting);
-        }
-
-        static void AddFriend(MailBook mailBook)
-        {
-            //adding to mailbook
-            Console.Write("Type friend's name:");
-            string name = Console.ReadLine();
-            Console.Write("Type friend's email:");
-            string email = Console.ReadLine();
-            mailBook.Friends.Add(new Friend(name, email));
-
-            //saving new friend to hd
-            try
-            {
-                string file = "tutut.csv";
-                if (System.IO.File.Exists(file))
-                {
-                    using (System.IO.StreamWriter sw = System.IO.File.AppendText(file))
-                    {
-                        sw.Write(name + ";" + email);
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
         }
     }
