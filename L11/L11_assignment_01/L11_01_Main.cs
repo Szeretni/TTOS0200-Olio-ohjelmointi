@@ -31,6 +31,9 @@ namespace L11_assignment_01
             bool quit = false;
             do
             {
+                //delegate
+                Formatter formatter = new Formatter(Empty);
+
                 //separating each digit from input
                 Console.WriteLine("1: Every letter to upper case.\n2: Every letter to lower case.\n3: First letter to upper case.\n4: Letters to reverse order.\n0: Quit");
                 string order = Console.ReadLine();
@@ -52,30 +55,37 @@ namespace L11_assignment_01
                     switch (i)
                     {
                         case 1:
-                            Formatter formatter = Upper;
-                            formatter(userInput);
+                            formatter += Upper;
+                            
                             break;
                         case 2:
-                            formatter = Lower;
-                            formatter(userInput);
+                            formatter += Lower;
+                            
                             break;
                         case 3:
-                            formatter = Topic;
-                            formatter(userInput);
+                            formatter += Topic;
+                            
                             break;
                         case 4:
-                            formatter = Reverse;
-                            formatter(userInput);
+                            formatter += Reverse;
+                            
                             break;
                         case 0:
                             quit = true;
                             break;
                     }
                 }
+                //calling delegate
+                formatter(userInput);
             } while (!quit);
         }
 
         //methods
+        //needed to create delegate and add methods in loop
+        static void Empty(string s)
+        { 
+        }
+
         static void Upper(string s)
         {
             Console.WriteLine(s.ToUpper());
