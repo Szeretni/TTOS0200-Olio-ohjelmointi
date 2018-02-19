@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{18D688EF-2F89-411D-BF9A-EF257F2E502D}</ProjectGuid>
+    <ProjectGuid>{A3D17C51-9ECC-4B4E-8A6E-9D1B6B16029E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L10_assignment_05</RootNamespace>
-    <AssemblyName>L10_assignment_05</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>L12_assignment_01</RootNamespace>
+    <AssemblyName>L12_assignment_01</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,9 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="L10_05_Main.cs" />
+    <Compile Include="Dice.cs" />
+    <Compile Include="L12_01_Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TV.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

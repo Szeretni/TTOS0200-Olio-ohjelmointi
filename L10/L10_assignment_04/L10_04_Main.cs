@@ -33,17 +33,17 @@ namespace L10_assignment_04
                     //int, double or nn
                     if (isInt)
                     {
-                        //Console.WriteLine("The number is an integer");
+                        Console.WriteLine("The number is an integer");
                         outputInt.WriteLine(resultInt);
                     }
                     else if (isDouble)
                     {
-                        //Console.WriteLine("The number is a double");
+                        Console.WriteLine("The number is a double");
                         outputDouble.WriteLine(resultDouble);
                     }
                     else
                     {
-                        //Console.WriteLine("Not a valid input");
+                        Console.WriteLine("Not a valid input");
                         outputInt.Close();
                         outputDouble.Close();
                         break;

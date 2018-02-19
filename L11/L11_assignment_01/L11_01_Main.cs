@@ -32,7 +32,9 @@ namespace L11_assignment_01
             do
             {
                 //delegate
-                Formatter formatter = new Formatter(Empty);
+                Formatter formatter2 = new Formatter(Empty);
+                Formatter formatter = null;
+                Formatter formatter1 = delegate (string str) { };
 
                 //separating each digit from input
                 Console.WriteLine("1: Every letter to upper case.\n2: Every letter to lower case.\n3: First letter to upper case.\n4: Letters to reverse order.\n0: Quit");

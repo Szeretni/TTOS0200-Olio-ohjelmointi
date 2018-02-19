@@ -15,10 +15,11 @@ namespace L06_animals
                 return 4;
             }
         }
-        
+        /*
         public override void Talk()
         {
             Console.WriteLine("Miau!");
         }
+        */
     }
 }
