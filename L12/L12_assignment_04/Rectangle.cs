@@ -6,18 +6,43 @@ using System.Threading.Tasks;
 
 namespace L12_assignment_04
 {
-    class Rectangel : Shape
+    class Rectangle : Shape
     {
+        //constructors
+        public Rectangle(double height,double width)
+        {
+            Name = "Rectangle";
+            this.height = height;
+            this.width = width;
+        }
         public override string Name { get; set; }
 
-        public override void Area()
+        public override double Area(double width, double height)
         {
-
+            double result = width * height;
+            return result;
         }
 
-        public override void Circumference()
+        public override double Area(double placeholder)
         {
-
+            double result = placeholder * placeholder;
+            return result;
         }
+
+        public override double Circumference(double placeholder)
+        {
+            double result = 4 * placeholder;
+            return result;
+        }
+
+        public override double Circumference(double width, double height)
+        {
+            double result = 2 * width + 2 * height;
+            return result;
+        }
+
+        //properties
+        private double height;
+        private double width;
     }
 }

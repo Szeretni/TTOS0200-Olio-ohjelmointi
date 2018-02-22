@@ -9,13 +9,15 @@ namespace L12_assignment_04
     abstract class Shape
     {
         //collections
-        public List<Shape> shapeList { get; }
+        public List<Shape> shapeList = new List<Shape>();
 
         //properties
         abstract public string Name { get; set; }
 
         //methods
-        abstract public void Area();
-        abstract public void Circumference();
+        abstract public double Area(double d);
+        abstract public double Area(double d, double d1);
+        abstract public double Circumference(double d);
+        abstract public double Circumference(double d,double e);
     }
 }
