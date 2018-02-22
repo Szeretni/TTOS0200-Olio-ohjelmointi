@@ -17,20 +17,22 @@ namespace L12_assignment_04
         }
         public override string Name { get; set; }
 
-        public override void Area(double width, double height)
+        public override double Area(double width, double height)
         {
             area = width * height;
+            return area;
         }
 
-        public override void Circumference(double width, double height)
+        public override double Circumference(double width, double height)
         {
             circumference = 2 * width + 2 * height;
+            return circumference;
         }
 
         //field values
         private double height;
         private double width;
-        public double area;
-        public double circumference;
+        private double area;
+        private double circumference;
     }
 }

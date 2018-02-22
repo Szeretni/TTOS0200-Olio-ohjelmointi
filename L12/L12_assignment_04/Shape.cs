@@ -15,7 +15,7 @@ namespace L12_assignment_04
         abstract public string Name { get; set; }
 
         //methods
-        abstract public void Area(double d, double e);
-        abstract public void Circumference(double d,double e);
+        abstract public double Area(double d, double e);
+        abstract public double Circumference(double d,double e);
     }
 }

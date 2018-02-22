@@ -13,27 +13,27 @@ namespace L12_assignment_04
         {
             Name = "Circle";
             this.radius = radius;
-            Area(radius, 0);
-            Circumference(radius, 0);
         }
         
         //methods
-        public override void Area(double radius,double placeholder)
+        public override double Area(double radius,double placeholder)
         {
             area = Math.PI * (Math.Pow(radius, 2));
+            return area;
         }
 
-        public override void Circumference(double radius, double placeholder)
+        public override double Circumference(double radius, double placeholder)
         {
             circumference = 2 * Math.PI * radius;
+            return circumference;
         }
 
         //properties
-        private double radius;
         public override string Name { get; set; }
 
         //field values
-        public double area;
-        public double circumference;
+        private double radius;
+        private double area;
+        private double circumference;
     }
 }
