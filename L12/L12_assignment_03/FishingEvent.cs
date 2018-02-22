@@ -31,12 +31,17 @@ namespace L12_assignment_03
             Registry.FishingEventDict.Add(Name, new FishingEvent(fisher, fish, location));
         }
 
-
+        public void PrintFishingEventInfo()
+        {
+            fish.PrintFish();
+            location.PrintLocation();
+            fisher.PrintFisher();
+        }
 
         //properties
-        private Fisher fisher;
-        private Fish fish;
-        private Location location;
+        public Fisher fisher;
+        public Fish fish;
+        public Location location;
         static private long ind = 0;
         static private string name = "FishingEvent_";
         static private string Name { get; set; }

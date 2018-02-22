@@ -16,11 +16,17 @@ namespace L12_assignment_03
             this.Weight = Weight;
         }
 
+        //methods
         static public Fish CreateFish(string Specie, double Lenght, double Weight, Collections Registry)
         {
             Fish fish = new Fish(Specie, Lenght, Weight);
             Registry.Fishlist.Add(fish);
             return fish;
+        }
+
+        public void PrintFish()
+        {
+            Console.WriteLine(" - {0} {1} cm {2} kg", Specie,Lenght,Weight);
         }
 
         //properties

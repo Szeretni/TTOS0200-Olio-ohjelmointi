@@ -36,7 +36,7 @@ namespace L12_assignment_03
         //print fisher
         public void PrintFisher()
         {
-            Console.WriteLine("- Fisherman: {0} Phone: {1}", Name, PhoneNumber);
+            Console.WriteLine(" - Fisherman: {0}", Name);
         }
 
         //properties

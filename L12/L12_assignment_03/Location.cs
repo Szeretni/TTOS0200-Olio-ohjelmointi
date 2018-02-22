@@ -31,6 +31,12 @@ namespace L12_assignment_03
             }
         }
 
+        public void PrintLocation()
+        {
+            Console.WriteLine(" - place: {0}", Place);
+            Console.WriteLine(" - location: {0}", LocationS);
+        }
+
         //properties
         public string Place { get; }
         public string LocationS { get; }
