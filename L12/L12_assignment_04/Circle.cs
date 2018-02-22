@@ -9,39 +9,31 @@ namespace L12_assignment_04
     class Circle : Shape
     {
         //constructors
-        public Circle(double radius)
+        public Circle(double radius,double placeholder)
         {
             Name = "Circle";
             this.radius = radius;
+            Area(radius, 0);
+            Circumference(radius, 0);
         }
         
         //methods
-        public override double Area(double radius)
+        public override void Area(double radius,double placeholder)
         {
-            double result = Math.PI * (Math.Pow(radius, 2));
-            return result;
+            area = Math.PI * (Math.Pow(radius, 2));
         }
 
-        public override double Area(double placeholder1, double placeholder2) //not needed, just radius is enough
+        public override void Circumference(double radius, double placeholder)
         {
-            double result = Math.PI * (Math.Pow(placeholder1, 2));
-            return result;
-        }
-
-        public override double Circumference(double radius)
-        {
-            double result = 2 * Math.PI * radius;
-            return result;
-        }
-
-        public override double Circumference(double placeholder1, double placeholder2) //not needed, just radius is enough
-        {
-            double result = 2 * Math.PI * placeholder1;
-            return result;
+            circumference = 2 * Math.PI * radius;
         }
 
         //properties
         private double radius;
         public override string Name { get; set; }
+
+        //field values
+        public double area;
+        public double circumference;
     }
 }

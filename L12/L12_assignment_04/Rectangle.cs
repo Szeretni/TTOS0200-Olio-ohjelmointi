@@ -17,32 +17,20 @@ namespace L12_assignment_04
         }
         public override string Name { get; set; }
 
-        public override double Area(double width, double height)
+        public override void Area(double width, double height)
         {
-            double result = width * height;
-            return result;
+            area = width * height;
         }
 
-        public override double Area(double placeholder) //not needed, have to give width and height, even though they can be equal
+        public override void Circumference(double width, double height)
         {
-            double result = placeholder * placeholder;
-            return result;
+            circumference = 2 * width + 2 * height;
         }
 
-        public override double Circumference(double placeholder) //not needed, have to give width and height, even though they can be equal
-        {
-            double result = 4 * placeholder;
-            return result;
-        }
-
-        public override double Circumference(double width, double height)
-        {
-            double result = 2 * width + 2 * height;
-            return result;
-        }
-
-        //properties
+        //field values
         private double height;
         private double width;
+        public double area;
+        public double circumference;
     }
 }

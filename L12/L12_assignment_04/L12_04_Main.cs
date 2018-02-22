@@ -23,16 +23,12 @@ namespace L12_assignment_04
             switch (s)
             {
                 case "Circle":
-                    Shape sh = new Circle(d); 
-                    double area = sh.Area(d);
-                    double circumference = sh.Circumference(d);
-                    Console.WriteLine("Circle Radius={0} Area={1:.00} Circumference={2:.00}", d, area, circumference);
+                    Shape sh = new Circle(d,e); 
+                    Console.WriteLine("Circle Radius={0} Area={1:.00} Circumference={2:.00}", d, e, e);
                     break;
                 case "Rectangle":
                     sh = new Rectangle(d,e);
-                    area = sh.Area(d,e);
-                    circumference = sh.Circumference(d,e);
-                    Console.WriteLine("Rectangle Widht={0} Height={1} Area={2:.00} Circumference={3:.00}", d, e, area, circumference);
+                    Console.WriteLine("Rectangle Widht={0} Height={1} Area={2:.00} Circumference={3:.00}", d, e, e, e);
                     break;
                 default:
                     Console.WriteLine("Unkown shape.");
