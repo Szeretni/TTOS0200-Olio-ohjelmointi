@@ -23,13 +23,13 @@ namespace L12_assignment_04
             return result;
         }
 
-        public override double Area(double placeholder)
+        public override double Area(double placeholder) //not needed, have to give width and height, even though they can be equal
         {
             double result = placeholder * placeholder;
             return result;
         }
 
-        public override double Circumference(double placeholder)
+        public override double Circumference(double placeholder) //not needed, have to give width and height, even though they can be equal
         {
             double result = 4 * placeholder;
             return result;

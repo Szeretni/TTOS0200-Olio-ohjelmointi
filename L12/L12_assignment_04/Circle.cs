@@ -22,7 +22,7 @@ namespace L12_assignment_04
             return result;
         }
 
-        public override double Area(double placeholder1, double placeholder2)
+        public override double Area(double placeholder1, double placeholder2) //not needed, just radius is enough
         {
             double result = Math.PI * (Math.Pow(placeholder1, 2));
             return result;
@@ -34,7 +34,7 @@ namespace L12_assignment_04
             return result;
         }
 
-        public override double Circumference(double placeholder1, double placeholder2)
+        public override double Circumference(double placeholder1, double placeholder2) //not needed, just radius is enough
         {
             double result = 2 * Math.PI * placeholder1;
             return result;

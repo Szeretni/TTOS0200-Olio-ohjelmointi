@@ -18,6 +18,6 @@ namespace L12_assignment_04
         abstract public double Area(double d);
         abstract public double Area(double d, double d1);
         abstract public double Circumference(double d);
-        abstract public double Circumference(double d,double e);
+        abstract public double Circumference(double d,double d1);
     }
 }
