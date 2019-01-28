@@ -11,8 +11,12 @@ namespace L05_assignment01
     {
         public static bool NumberValidator(string input)
         {
-            float number;
-            bool result = float.TryParse(input, out number);
+            if (input[0] == ',' || input[input.Count() - 1] == ',')
+            {
+                Console.Write("Input " + input + " is a number: ");
+                return false;
+            }
+            bool result = float.TryParse(input, out float number);
             Console.Write("Input " + input + " is a number: ");
             return result;
         }
